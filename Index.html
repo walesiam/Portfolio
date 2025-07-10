@@ -126,6 +126,21 @@
             animation: slideUp 1s ease forwards 0.3s;
         }
 
+        .profile-img {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            border: 4px solid #fff;
+            margin: 0 auto 2rem;
+            background: #333;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            opacity: 0;
+            animation: slideUp 1s ease forwards 0.6s;
+        }
+
         .cta-button {
             display: inline-block;
             background: #fff;
@@ -439,6 +454,11 @@
                 gap: 2rem;
             }
 
+            .profile-img {
+                width: 150px;
+                height: 150px;
+            }
+
             .section-title {
                 font-size: 2rem;
             }
@@ -465,6 +485,12 @@
                 font-size: 1rem;
             }
 
+             .profile-img {
+                width: 120px;
+                height: 120px;
+                font-size: 2rem;
+            }
+
             section {
                 padding: 60px 0;
             }
@@ -474,6 +500,11 @@
                 padding: 1.5rem;
             }
             
+        }
+        img {
+            width: 100%;
+            border-radius: 50%;
+
         }
     </style>
 </head>
@@ -498,6 +529,7 @@
 
     <section class="hero" id="home">
         <div class="hero-content">
+            <div class="profile-img"><img src="/image/img.png" alt=""></div>
             <h1>Project Manager / Data Scientist</h1>
             <p>Transforming data into actionable insights while delivering strategic project outcomes</p>
             <a href="#projects" class="cta-button">View My Work</a>

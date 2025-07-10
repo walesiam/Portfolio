@@ -290,6 +290,7 @@
         .project-links {
             display: flex;
             gap: 1rem;
+            justify-content: center; /* Added for horizontal centering */
         }
 
         .project-links a {
@@ -376,6 +377,13 @@
             background: transparent;
             color: #fff;
         }
+        
+        #my-form-status {
+            margin-top: 10px;
+            color: #fff;
+            font-weight: bold;
+        }
+
 
         /* Footer */
         footer {
@@ -471,7 +479,6 @@
 </head>
 
 <body>
-    <!-- Header -->
     <header>
         <nav class="container">
             <div class="logo">Adewale Adenuga</div>
@@ -489,7 +496,6 @@
         </nav>
     </header>
 
-    <!-- Hero Section -->
     <section class="hero" id="home">
         <div class="hero-content">
             <h1>Project Manager / Data Scientist</h1>
@@ -498,7 +504,6 @@
         </div>
     </section>
 
-    <!-- About Section -->
     <section class="about" id="about">
         <div class="container">
             <h2 class="section-title">About Me</h2>
@@ -543,7 +548,6 @@
         </div>
     </section>
 
-    <!-- Projects Section -->
     <section class="projects" id="projects">
         <div class="container">
             <h2 class="section-title">Projects</h2>
@@ -558,8 +562,7 @@
                         <span class="tech-tag">Beautiful Soup</span>
                     </div>
                     <div class="project-links">
-                        <a href="#" onclick="alert('Demo link would go here')">Live Demo</a>
-                        <a href="#" onclick="alert('GitHub link would go here')">GitHub</a>
+                        <a href="https://github.com/walesiam/Projects/tree/main/python-projects/NLP" target="_blank">GitHub</a>
                     </div>
                 </div>
                 <div class="project-card">
@@ -572,12 +575,11 @@
                         <span class="tech-tag">ML</span>
                     </div>
                     <div class="project-links">
-                        <a href="#" onclick="alert('Demo link would go here')">Live Demo</a>
                         <a href="#" onclick="alert('GitHub link would go here')">GitHub</a>
                     </div>
                 </div>
                 <div class="project-card">
-                    <h3>Customer Experience Analysis</h3>
+                    <h3>Customer Experience Analysis </h3>
                     <p>Comprehensive customer experience dashboard integrating multiple data sources to provide actionable insights for improving customer satisfaction and retention rates.</p>
                     <div class="tech-stack">
                         <span class="tech-tag">Power BI</span>
@@ -585,15 +587,13 @@
                         <span class="tech-tag">CRM</span>
                     </div>
                     <div class="project-links">
-                        <a href="#" onclick="alert('Demo link would go here')">Live Demo</a>
-                        <a href="#" onclick="alert('GitHub link would go here')">GitHub</a>
+                        <a href="https://app.fabric.microsoft.com/view?r=eyJrIjoiYzM4ZjZlNGQtNWFlZC00OTk0LTk2MDQtZWMwZjk2MDAzZDllIiwidCI6IjdjY2E4NjVhLTkxODctNDU3Zi1hNjBjLTJmMGQ2OWQyOWYzMCJ9" target="_blank">Live Demo</a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Contact Section -->
     <section class="contact" id="contact">
         <div class="container">
             <h2 class="section-title">Get In Touch</h2>
@@ -605,7 +605,7 @@
                     <p><strong>Phone:</strong> +447776546523 / +4915215806607</p>
                     <p><strong>Location:</strong> Berlin, Germany</p>
                 </div>
-                <form class="contact-form" onsubmit="handleSubmit(event)">
+                <form class="contact-form" id="my-form" action="https://formspree.io/f/mjkrnynd" method="POST" method="POST">
                     <div class="form-group">
                         <label for="name">Name</label>
                         <input type="text" id="name" name="name" required>
@@ -619,18 +619,34 @@
                         <textarea id="message" name="message" rows="5" required></textarea>
                     </div>
                     <button type="submit" class="submit-btn">Send Message</button>
+                    <div id="my-form-status"></div>
                 </form>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
     <footer>
         <div class="container">
             <p>&copy; 2025 Adewale Adenuga Portfolio. All rights reserved.</p>
         </div>
     </footer>
 
+    <script type="text/javascript">
+    var sc_project=13150110; 
+    var sc_invisible=1; 
+    var sc_security="c59f992c"; 
+    </script>
+    <script type="text/javascript"
+    src="https://www.statcounter.com/counter/counter.js" async></script>
+    <noscript><div class="statcounter"><a title="Web Analytics Made Easy -
+    Statcounter" href="https://statcounter.com/" target="_blank"><img
+    class="statcounter" src="https://c.statcounter.com/13150110/0/c59f992c/1/"
+    alt="Web Analytics Made Easy - Statcounter"
+    referrerPolicy="no-referrer-when-downgrade"></a></div></noscript>
+    <script>
+    (function(){if(!window.chatbase||window.chatbase("getState")!=="initialized"){window.chatbase=(...arguments)=>{if(!window.chatbase.q){window.chatbase.q=[]}window.chatbase.q.push(arguments)};window.chatbase=new Proxy(window.chatbase,{get(target,prop){if(prop==="q"){return target.q}return(...args)=>target(prop,...args)}})}const onLoad=function(){const script=document.createElement("script");script.src="https://www.chatbase.co/embed.min.js";script.id="2X-2NVVWZ1ZSMsSsrcDC8";script.domain="www.chatbase.co";document.body.appendChild(script)};if(document.readyState==="complete"){onLoad()}else{window.addEventListener("load",onLoad)}})();
+    </script>
+    
     <script>
         // Mobile menu toggle
         const mobileMenu = document.getElementById('mobileMenu');
@@ -656,12 +672,41 @@
             });
         });
 
-        // Form submission handler
-        function handleSubmit(event) {
+        // =========================================================
+        // New handleSubmit function for AJAX form submission
+        // NOTE: The `form.addEventListener("submit", handleSubmit)` call 
+        //       is included in the user's provided script below.
+        // =========================================================
+        var form = document.getElementById("my-form");
+        async function handleSubmit(event) {
             event.preventDefault();
-            alert('Thank you for your message! I\'ll get back to you soon.');
-            event.target.reset();
+            var status = document.getElementById("my-form-status");
+            var data = new FormData(event.target);
+            fetch(event.target.action, {
+                method: form.method,
+                body: data,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            }).then(response => {
+                if (response.ok) {
+                    status.innerHTML = "Thank you for contacting me. I will respond to your message promptly.";
+                    form.reset()
+                } else {
+                    response.json().then(data => {
+                        if (Object.hasOwn(data, 'errors')) {
+                            status.innerHTML = data["errors"].map(error => error["message"]).join(", ")
+                        } else {
+                            status.innerHTML = "Oops! There was a problem submitting your form"
+                        }
+                    })
+                }
+            }).catch(error => {
+                status.innerHTML = "Oops! There was a problem submitting your form"
+            });
         }
+        form.addEventListener("submit", handleSubmit);
+        // =========================================================
 
         // Header scroll effect
         window.addEventListener('scroll', () => {
@@ -698,4 +743,4 @@
     </script>
 </body>
 
-</html>
+<

@@ -16,7 +16,7 @@
             font-family: Arial, sans-serif;
             font-weight: normal;
             line-height: 1.6;
-            color: #2c3e50;
+            color: #502c2c;
             background: linear-gradient(135deg, #f8f9fa 0%, #e3f2fd 100%);
             overflow-x: hidden;
         }
@@ -29,7 +29,7 @@
 
         /* Header */
         header {
-            background: #000;
+            background: transparent;
             color: #fff;
             padding: 1rem 0;
             position: fixed;
@@ -104,14 +104,14 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            background: linear-gradient(135deg, #000 0%, #333 100%);
+            background: linear-gradient(135deg, #3b74beb8 0%, #7b8187 100%);
             color: #fff;
             text-align: center;
             position: relative;
         }
 
         .hero-content h1 {
-            font-size: 3.5rem;
+            font-size: 2.5rem;
             font-family: 'Arial Black', Arial, sans-serif;
             font-weight: 900;
             margin-bottom: 1rem;
@@ -139,6 +139,14 @@
             font-size: 3rem;
             opacity: 0;
             animation: slideUp 1s ease forwards 0.6s;
+            overflow: hidden;
+        }
+
+        .profile-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
         }
 
         .cta-button {
@@ -216,16 +224,18 @@
         }
 
         .skill-item {
-            background: linear-gradient(135deg, #ffffff 0%, #f8fbff 100%);
+            background: linear-gradient(135deg, #ffffff 0%, #7b8187 100%);
             padding: 1.5rem;
-            border: 2px solid #1976d2;
+            border: 2px solid #7b8187;
             text-align: center;
             transition: all 0.3s ease;
             box-shadow: 0 2px 10px rgba(25, 118, 210, 0.1);
+            cursor: pointer;
+            position: relative;
         }
 
         .skill-item:hover {
-            background: linear-gradient(135deg, #1976d2 0%, #1565c0 100%);
+            background: linear-gradient(135deg, #6abcfb 0%, #7b8187 100%);
             color: #fff;
             transform: translateY(-5px);
             box-shadow: 0 8px 25px rgba(25, 118, 210, 0.3);
@@ -246,8 +256,8 @@
         }
 
         .project-card {
-            background: linear-gradient(135deg, #ffffff 0%, #f8fbff 100%);
-            border: 3px solid #1976d2;
+            background: linear-gradient(135deg, #ffffff 0%, #4c545e 100%);
+            border: 3px solid #7b8187;
             padding: 2rem;
             transition: all 0.3s ease;
             position: relative;
@@ -294,37 +304,37 @@
         }
 
         .tech-tag {
-            background: linear-gradient(135deg, #1976d2 0%, #1565c0 100%);
+            background: linear-gradient(135deg, #94adc7 0%, #7b8187 100%);
             color: #fff;
             padding: 0.3rem 0.8rem;
             font-size: 0.8rem;
-            border: 1px solid #1976d2;
+            border: 1px solid #7b8187;
             border-radius: 15px;
         }
 
         .project-links {
             display: flex;
             gap: 1rem;
-            justify-content: center; /* Added for horizontal centering */
+            justify-content: center;
         }
 
         .project-links a {
-            color: #1976d2;
+            color: #fff;
             text-decoration: none;
-            border: 2px solid #1976d2;
+            border: 2px solid #7b8187;
             padding: 0.5rem 1rem;
             transition: all 0.3s ease;
             border-radius: 5px;
         }
 
         .project-links a:hover {
-            background: #1976d2;
+            background: #7b8187;
             color: #fff;
         }
 
         /* Contact Section */
         .contact {
-            background: #000;
+            background: #5f5f62;
             color: #fff;
         }
 
@@ -347,6 +357,40 @@
 
         .contact-info p {
             margin-bottom: 1rem;
+        }
+
+        /* Social Media Links */
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2rem;
+            align-items: center;
+        }
+
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border: 2px solid #fff;
+            border-radius: 50%;
+            color: #fff;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-size: 1.2rem;
+        }
+
+        .social-links a:hover {
+            background: #fff;
+            color: #5f5f62;
+            transform: translateY(-2px);
+        }
+
+        .social-links a svg {
+            width: 20px;
+            height: 20px;
         }
 
         .contact-form {
@@ -399,7 +443,6 @@
             font-weight: bold;
         }
 
-
         /* Footer */
         footer {
             background: #333;
@@ -414,7 +457,6 @@
                 opacity: 0;
                 transform: translateY(50px);
             }
-
             to {
                 opacity: 1;
                 transform: translateY(0);
@@ -485,7 +527,7 @@
                 font-size: 1rem;
             }
 
-             .profile-img {
+            .profile-img {
                 width: 120px;
                 height: 120px;
                 font-size: 2rem;
@@ -499,12 +541,10 @@
             .skill-item {
                 padding: 1.5rem;
             }
-            
-        }
-        img {
-            width: 100%;
-            border-radius: 50%;
 
+            .social-links {
+                justify-content: center;
+            }
         }
     </style>
 </head>
@@ -512,7 +552,7 @@
 <body>
     <header>
         <nav class="container">
-            <div class="logo">Adewale Adenuga</div>
+            <div class="logo">ADEWALE ADENUGA, MSc, PMP®</div>
             <ul class="nav-links" id="navLinks">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">About</a></li>
@@ -551,27 +591,27 @@
                     <p>I excel at translating complex technical concepts into actionable business strategies, making me the ideal liaison between C-suite executives and technical teams. My track record includes securing buy-in for transformational initiatives, managing stakeholder relationships across all organizational levels and consistently delivering projects on time and within budget while maintaining the highest quality standards.</p>
                 </div>
                 <div class="skills">
-                    <div class="skill-item">
-                        <h4>Visualization</h4>
-                        <p>Power BI, Tableau, Looker</p>
+                    <div class="skill-item clickable" id="visualizationSkill">
+                        <h4> Analysis & Visualization</h4>
+                        <p>Python, R, Power BI, Tableau, Fabric, Looker, Excel</p>
                     </div>
-                    <div class="skill-item">
-                        <h4>Data Analytics</h4>
-                        <p>Python, R, NLP, Excel, ML</p>
+                    <div class="skill-item clickable" id="dataAnalysisSkill">
+                        <h4>Analytics</h4>
+                        <p>NLP, ML, Customer Experience, Marketing, Hypothesis Testing </p>
                     </div>
-                    <div class="skill-item">
+                    <div class="skill-item clickable" id="databaseSkill">
                         <h4>Database</h4>
                         <p>MySQL, Postgres, Data Warehouse</p>
                     </div>
-                    <div class="skill-item">
+                    <div class="skill-item clickable" id="toolsSkill">
                         <h4>Tools</h4>
-                        <p>Git, Microsoft 365, Google Workspace</p>
+                        <p>Git, Microsoft 365, Google Workspace, English(C1), German(A1)</p>
                     </div>
-                    <div class="skill-item">
+                    <div class="skill-item clickable" id="projectManagementSkill">
                         <h4>Project Management</h4>
                         <p>Jira, Figma, Confluence, Miro</p>
                     </div>
-                    <div class="skill-item">
+                    <div class="skill-item clickable" id="automationSkill">
                         <h4>Automation</h4>
                         <p>Zapier, Airtable, Notion, Make, n8n</p>
                     </div>
@@ -585,7 +625,7 @@
             <h2 class="section-title">Projects</h2>
             <div class="projects-grid">
                 <div class="project-card">
-                    <h3>British Airways Review Analysis</h3>
+                    <h3>Sentiment Analysis (British Airways)</h3>
                     <p>Comprehensive sentiment analysis and topic modeling of British Airways customer reviews to extract actionable insights for improving customer experience and service delivery.</p>
                     <div class="tech-stack">
                         <span class="tech-tag">BERTopic</span>
@@ -594,11 +634,12 @@
                         <span class="tech-tag">Beautiful Soup</span>
                     </div>
                     <div class="project-links">
+                        <a href="https://medium.com/@adewaleadenuga483/british-airways-customer-review-analysis-uncovering-sentiment-for-enhanced-passenger-experience-3b3bae8d51a1" target="_blank">Read</a>
                         <a href="https://github.com/walesiam/Projects/tree/main/python-projects/NLP" target="_blank">GitHub</a>
                     </div>
                 </div>
                 <div class="project-card">
-                    <h3>XGoals Prediction ML Project</h3>
+                    <h3>Prediction Model</h3>
                     <p>Machine learning model for predicting expected goals (xG) in football matches using advanced statistical analysis and predictive modeling techniques.</p>
                     <div class="tech-stack">
                         <span class="tech-tag">Scipy</span>
@@ -607,11 +648,11 @@
                         <span class="tech-tag">ML</span>
                     </div>
                     <div class="project-links">
-                        <a href="#" onclick="alert('GitHub link would go here')">GitHub</a>
+                        <a href="https://github.com/walesiam/Projects/tree/d64a2f035bc88d79fde73b6c5ddc773833432ad9/python-projects/Machine%20Learning" target="_blank">GitHub</a>
                     </div>
                 </div>
                 <div class="project-card">
-                    <h3>Customer Experience Analysis </h3>
+                    <h3>Customer Experience Analysis </h3>
                     <p>Comprehensive customer experience dashboard integrating multiple data sources to provide actionable insights for improving customer satisfaction and retention rates.</p>
                     <div class="tech-stack">
                         <span class="tech-tag">Power BI</span>
@@ -619,7 +660,19 @@
                         <span class="tech-tag">CRM</span>
                     </div>
                     <div class="project-links">
+                        <a href="https://medium.com/@adewaleadenuga483/revolutionizing-retail-customer-experience-a-data-driven-dashboard-approach-eb3e344c2fd7" target="_blank">Read</a>
                         <a href="https://app.fabric.microsoft.com/view?r=eyJrIjoiYzM4ZjZlNGQtNWFlZC00OTk0LTk2MDQtZWMwZjk2MDAzZDllIiwidCI6IjdjY2E4NjVhLTkxODctNDU3Zi1hNjBjLTJmMGQ2OWQyOWYzMCJ9" target="_blank">Live Demo</a>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <h3>Art of Negotiation </h3>
+                    <p>A Project Manager’s Guide to Sketching Masterpiece Deals.</p>
+                    <div class="tech-stack">
+                        <span class="tech-tag">Project Management</span>
+                        <span class="tech-tag">Negotiation</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://medium.com/@adewaleadenuga483/the-art-of-negotiation-a-project-managers-guide-to-sketching-masterpiece-deals-fe12b56bc0d9" target="_blank">Read</a>
                     </div>
                 </div>
             </div>
@@ -633,12 +686,30 @@
                 <div class="contact-info">
                     <h3>Let's Work Together</h3>
                     <p>I'm always interested in new opportunities and challenging projects. Whether you need a project manager to drive strategic initiatives or a data scientist to unlock insights from your data, I'd love to hear from you.</p>
-                    <p><strong>Email:</strong> adewaleadenuga483@gmail.com</p>
-                    <p><strong>Phone:</strong> +4915215806607</p>
-                    <p><strong>Assistant WhatsApp:</strong> +4915510257419</p>
-                    <p><strong>Location:</strong> Germany</p>
+                    <div class="social-links">
+                        <a href="mailto:adewaleadenuga483@gmail.com" target="_blank" title="Email">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                            </svg>
+                        </a>
+                        <a href="https://www.linkedin.com/in/adewale-adenuga-msc-pmp%C2%AE-a3650686/" target="_blank" title="LinkedIn">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                            </svg>
+                        </a>
+                        <a href="https://medium.com/@adewaleadenuga483" target="_blank" title="Medium">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M13.54 12a6.8 6.8 0 01-6.77 6.82A6.8 6.8 0 010 12a6.8 6.8 0 016.77-6.82A6.8 6.8 0 0113.54 12zM20.96 12c0 3.54-1.51 6.42-3.38 6.42-1.87 0-3.39-2.88-3.39-6.42s1.52-6.42 3.39-6.42 3.38 2.88 3.38 6.42M24 12c0 3.17-.53 5.75-1.19 5.75-.66 0-1.19-2.58-1.19-5.75s.53-5.75 1.19-5.75S24 8.83 24 12z"/>
+                            </svg>
+                        </a>
+                        <a href="https://www.youtube.com/channel/UCvPUbgL4CZhjhOPnamuvGDA" target="_blank" title="YouTube">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                            </svg>
+                        </a>
+                    </div>
                 </div>
-                <form class="contact-form" id="my-form" action="https://formspree.io/f/mjkrnynd" method="POST" method="POST">
+                <form class="contact-form" id="my-form" action="https://formspree.io/f/mjkrnynd" method="POST">
                     <div class="form-group">
                         <label for="name">Name</label>
                         <input type="text" id="name" name="name" required>
@@ -665,9 +736,9 @@
     </footer>
 
     <script type="text/javascript">
-    var sc_project=13150110; 
-    var sc_invisible=1; 
-    var sc_security="c59f992c"; 
+    var sc_project=13150110; 
+    var sc_invisible=1; 
+    var sc_security="c59f992c"; 
     </script>
     <script type="text/javascript"
     src="https://www.statcounter.com/counter/counter.js" async></script>
@@ -705,11 +776,34 @@
             });
         });
 
-        // =========================================================
-        // New handleSubmit function for AJAX form submission
-        // NOTE: The `form.addEventListener("submit", handleSubmit)` call 
-        //       is included in the user's provided script below.
-        // =========================================================
+        // Skill item click handlers with generic placeholder URLs
+        // Replace 'YOUR_LINK_HERE' with actual URLs
+        
+        document.getElementById('visualizationSkill').addEventListener('click', function() {
+            window.open('https://1drv.ms/b/c/4e574f783958baca/EVi8Uz44oQtHk20NhYkct9sBIcyq2dWcj6jdkmdLapEYRw?e=ZcQ5Tu', '_blank');
+        });
+
+        document.getElementById('dataAnalysisSkill').addEventListener('click', function() {
+            window.open('https://1drv.ms/b/c/4e574f783958baca/EbbMjLQe5qFOp3lVHHwb9vsBKPBhrXe304LEdfEs4ZB_bA?e=JmhgY9', '_blank');
+        });
+
+        document.getElementById('databaseSkill').addEventListener('click', function() {
+            window.open('https://1drv.ms/b/c/4e574f783958baca/EVh5-ysX9HdIuxXKXkKKRzsBkzWl-KlFRYQH9vk7ZWboDQ?e=7tndSI', '_blank');
+        });
+
+        document.getElementById('toolsSkill').addEventListener('click', function() {
+            window.open('https://1drv.ms/b/c/4e574f783958baca/EU44fYtuRoBOnjCcAidZTKUBaFdsELBgMY6Q8Cg7-FWEmQ?e=vC4jHY', '_blank');
+        });
+
+        document.getElementById('projectManagementSkill').addEventListener('click', function() {
+            window.open('https://1drv.ms/b/c/4e574f783958baca/ET5sgqCXW3RErEzS5JkleAMBVTEg7aDA-li-GZAzHMw4RA?e=FkwTNW', '_blank');
+        });
+
+        document.getElementById('automationSkill').addEventListener('click', function() {
+            window.open('https://1drv.ms/b/c/4e574f783958baca/EZeZo5--O7BPgHI8nZvp-TgBMQ7tl4LrzIh21fcDgnG3qg?e=2fWCd5', '_blank');
+        });
+
+        // Form submission handling
         var form = document.getElementById("my-form");
         async function handleSubmit(event) {
             event.preventDefault();
@@ -739,15 +833,14 @@
             });
         }
         form.addEventListener("submit", handleSubmit);
-        // =========================================================
 
         // Header scroll effect
         window.addEventListener('scroll', () => {
             const header = document.querySelector('header');
             if (window.scrollY > 100) {
-                header.style.background = 'rgba(0, 0, 0, 0.95)';
+                header.style.background = 'rgba(95, 95, 98, 0.8)';
             } else {
-                header.style.background = '#000';
+                header.style.background = '#0000';
             }
         });
 
